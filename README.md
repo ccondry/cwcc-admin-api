@@ -1,18 +1,17 @@
-# dCloud CWCC Provision API
+# dCloud CWCC API
 This is HTTP REST API code for the dCloud Cisco Webex Contact Center v1 demo.
-This API receives REST requests to provision a user's CUCM phones for the CWCC
-demo. It is intended to be run on the branding VM inside the CWCC instant demo
-session on dCloud, and is called from the cwcc-toolbox-api when a user needs
-their phones provisioned.
+This API receives REST requests for admins to manage the CWCC demo. It is intended to be run on the mm and mm-dev VMs, as well as toolbox1 and toolbox2
+in each dCloud datacenter. This service is called from the
+toolbox-management-ui UI frontend website.
 
 ## Download
 ```sh
-git clone https://gitlab.com/dcloud-collab/cwcc-provision-api.git
+git clone git@github.com:ccondry/cwcc-admin-api.git
 ```
 
 ## Installation By Script
 ```sh
-cd cwcc-provision-api
+cd cwcc-admin-api
 ./install.sh
 ```
 
@@ -23,11 +22,11 @@ npm start
 
 ## Manually Install as a Service on Linux
 ```sh
-sudo cp systemd.service /lib/systemd/system/cwcc-provision-api.service
-sudo systemctl enable cwcc-provision-api.service
+sudo cp systemd.service /lib/systemd/system/cwcc-admin-api.service
+sudo systemctl enable cwcc-admin-api.service
 ```
 
 ## Manually Start Service on Linux
 ```sh
-sudo systemctl start cwcc-provision-api.service
+sudo systemctl start cwcc-admin-api.service
 ```

@@ -3,8 +3,8 @@ Description=CJP Webex Toolbox HTTP REST API
 After=network.target
 
 [Service]
-WorkingDirectory=/opt/dcloud/cwcc-provision-api
-ExecStart=/usr/bin/node src/index
+WorkingDirectory=/opt/dcloud/cwcc-admin-api
+ExecStart=/usr/local/bin/node src/index
 Restart=always
 User=root
 Group=root

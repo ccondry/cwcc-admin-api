@@ -21,7 +21,7 @@ else
     npm i
     if [ $? -eq 0 ]; then
       echo "restarting systemd service..."
-      sudo /bin/systemctl restart cwcc-provision-api.service
+      sudo /bin/systemctl restart cwcc-admin-api.service
     else
       echo "npm install failed"
     fi

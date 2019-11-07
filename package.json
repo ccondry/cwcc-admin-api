@@ -1,24 +1,22 @@
 {
-  "name": "cwcc-provision-api",
+  "name": "cwcc-api",
   "version": "0.1.0",
-  "description": "CWCC provision REST API for dCloud. Intended to be run on the collab toolbox servers.",
+  "description": "CWCC provision REST API for dCloud. Intended to be run on the dCloud collab toolbox servers and mm servers.",
   "main": "src/index.js",
   "scripts": {
-    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 node src/index.js",
-    "test": "NODE_TLS_REJECT_UNAUTHORIZED=0 node test.js"
+    "start": "node src/index.js",
+    "test": "node test.js"
   },
   "author": "Coty Condry <ccondry@cisco.com>",
   "license": "UNLICENSED",
   "dependencies": {
     "atob": "^2.1.2",
-    "awesome-phonenumber": "^2.15.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "cucm-axl": "^0.1.9",
+    "cwcc-provision-client": "^0.2.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
-    "fast-xml-parser": "^3.12.19",
     "mongodb": "^3.3.0-beta2",
     "request-ip": "^2.1.3"
   }

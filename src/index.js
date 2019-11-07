@@ -6,7 +6,6 @@ const cors = require('cors')
 const fs = require('fs')
 const expressJwt = require('express-jwt')
 const requestIp = require('request-ip')
-const logger = require('./models/logger')
 const atob = require('atob')
 // load the public cert for validating JWT
 const cert_pub = fs.readFileSync('./certs/rsa-public.pem')
@@ -72,8 +71,6 @@ app.use(function(err, req, res, next) {
       const url = req.protocol + '://' + host + path
       // there was an error
       console.log('user at IP', clientIp, 'attempting to', method, 'at path', path, 'error', err.status, err.name, err.message)
-      // log to db
-      logger.log({clientIp, host, path, url, method, status: err.status, details: err.name, parameters: req.params, queryString: req.qs, response: err.message})
       // stop processing
       return
     } else {
@@ -91,10 +88,8 @@ app.use(function(err, req, res, next) {
 Routes
 *****/
 
-// provision user or get provision status
-app.use('/api/v1/cwcc/provision', require('./routes/provision'))
-// get dcloud session information
-app.use('/api/v1/cwcc/session', require('./routes/session'))
+//
+app.use('/api/v1/cwcc-admin', require('./routes/cwcc'))
 
 /*
 Go
